@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="hero" class="hero">
+  <h2>Halo, Saya <span class="highlight">Jorito Anton</span></h2>
+  <p>Seorang Web Developer yang suka membuat aplikasi berbasis web dengan Python, HTML, dan CSS.</p>
+  <a href="#projects" class="btn">Lihat Proyek</a>
+</section>
+
+<section id="projects" class="projects">
+  <h3>Proyek Saya</h3>
+  <div class="grid">
+    {% for p in projects %}
+      <article class="card">
+        <h4>{{ p.title }}</h4>
+        <p>{{ p.desc }}</p>
+        <a href="{{ p.link }}" target="_blank">Lihat Detail</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h3>Kontak</h3>
+  <p>📧 Email: <a href="mailto:nama@domain.com">nama@domain.com</a></p>
+  <p>💼 LinkedIn: <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
+  <p>🐱 GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+</section>
+{% endblock %}
