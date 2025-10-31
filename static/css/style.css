@@ -66,3 +66,29 @@ footer {
   background: #222;
   color: white;
 }
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0077ff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.btn:hover {
+  background: #005fcc;
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
+
+h1, h2, h3 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
