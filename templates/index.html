@@ -1,53 +1,28 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Jorito Anton</title>
-  <link rel="stylesheet" href="static/css/style.css" />
-</head>
+{% extends "base.html" %}
+{% block content %}
+<section id="hero" class="hero">
+  <h2>Halo, Saya <span class="highlight">Jorito Anton</span></h2>
+  <p>Seorang Web Developer yang suka membuat aplikasi berbasis web dengan Python, HTML, dan CSS.</p>
+  <a href="#projects" class="btn">Lihat Proyek</a>
+</section>
 
-<body>
-  <header>
-    <nav>
-      <h1>Jorito Anton</h1>
-      <ul>
-        <li><a href="#projects">Proyek</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+<section id="projects" class="projects">
+  <h3>Proyek Saya</h3>
+  <div class="grid">
+    {% for p in projects %}
+      <article class="card">
+        <h4>{{ p.title }}</h4>
+        <p>{{ p.desc }}</p>
+        <a href="{{ p.link }}" target="_blank">Lihat Detail</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
 
-  <section class="hero">
-    <h2>Halo 👋, Saya <span class="accent">Jorito Anton</span></h2>
-    <p>Web Developer yang suka membangun aplikasi menggunakan Python, Flask, HTML, dan CSS.</p>
-    <a class="btn" href="#projects">Lihat Proyek</a>
-  </section>
-
-  <section id="projects">
-    <h2>Proyek Saya</h2>
-
-    <div class="project">
-      <h3>Aplikasi Inventory</h3>
-      <p>Aplikasi manajemen stok barang berbasis Python & MySQL.</p>
-    </div>
-
-    <div class="project">
-      <h3>Website Portofolio</h3>
-      <p>Website statis portofolio menggunakan GitHub Pages.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>📧 Email: jorito@example.com</p>
-    <p>🐱 GitHub: <a href="https://github.com/joritofams">github.com/joritofams</a></p>
-    <p>💼 LinkedIn: linkedin.com/in/username</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Jorito Anton. All rights reserved.</p>
-  </footer>
-</body>
-</html>
-
+<section id="contact" class="contact">
+  <h3>Kontak</h3>
+  <p>📧 Email: <a href="mailto:nama@domain.com">nama@domain.com</a></p>
+  <p>💼 LinkedIn: <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
+  <p>🐱 GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+</section>
+{% endblock %}
